@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ann S. Abdelwahed | Data Analyst &amp; Tech Trainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EDF1F5;--surface:#FFFFFF;--ink:#14213D;--muted:#53607A;--line:#D3DBE6;--teal:#0B7F83;--amber:#E8A33D;--tableau:#2F5FD0;--powerbi:#C98A00;--excel:#1E7D4F;--sql:#7A4FB5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1726;--surface:#17213A;--ink:#EAF0FA;--muted:#9EABC4;--line:#2A3858;--teal:#3CC1C5;--amber:#F2B65A;--tableau:#7FA2FF;--powerbi:#F0B73A;--excel:#52C48A;--sql:#B28CF0;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1726;--surface:#17213A;--ink:#EAF0FA;--muted:#9EABC4;--line:#2A3858;--teal:#3CC1C5;--amber:#F2B65A;--tableau:#7FA2FF;--powerbi:#F0B73A;--excel:#52C48A;--sql:#B28CF0;color-scheme:dark}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+header.top b{font-family:"Bricolage Grotesque",sans-serif;font-size:19px}
+nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-size:15px}
+nav a:hover,nav a:focus-visible{color:var(--ink)}
+.hero{padding:56px 0 40px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,68px);font-weight:800;letter-spacing:-.02em}
+.hero p.lead{font-size:20px;color:var(--muted);max-width:34em;margin:22px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:500;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:focus-visible,.chip:focus-visible,.card a:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.hero-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+.hero-card .big{font-family:"Bricolage Grotesque",sans-serif;font-size:56px;font-weight:800;color:var(--teal);line-height:1}
+.hero-card p{margin:6px 0 18px;color:var(--muted);font-size:15px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.tools span{font-size:13px;font-weight:500;padding:4px 11px;border-radius:99px;border:1px solid var(--line)}
+section{padding:54px 0}
+section>.wrap>h2{font-size:clamp(28px,4vw,40px);margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 26px;max-width:38em}
+.filters{display:flex;flex-direction:column;gap:12px;margin-bottom:26px}
+.fgroup{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.fgroup .lab{width:74px;color:var(--muted);font-size:14px}
+.chip{font:500 15px "IBM Plex Sans",sans-serif;padding:8px 16px;border-radius:99px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.count{color:var(--muted);font-size:14px;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;border-top:5px solid var(--c)}
+.card[data-tool="Tableau"]{--c:var(--tableau)}.card[data-tool="Power BI"]{--c:var(--powerbi)}.card[data-tool="Excel"]{--c:var(--excel)}.card[data-tool="SQL"]{--c:var(--sql)}
+.thumb{height:104px;display:flex;align-items:flex-end;gap:7px;padding:16px 20px 0;background:linear-gradient(var(--bg),var(--surface))}
+.thumb i{flex:1;height:var(--h);background:var(--c);border-radius:5px 5px 0 0;opacity:.85}
+.body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.meta{display:flex;gap:8px;font-size:13px;font-weight:500}
+.meta .t{color:var(--c)}.meta .k{color:var(--muted)}
+.card h3{font-size:22px}
+.card dl{margin:0;font-size:15px}
+.card dt{font-weight:500;margin-top:8px}
+.card dd{margin:2px 0 0;color:var(--muted)}
+.card .go{margin-top:auto;padding-top:10px;font-weight:500;color:var(--c);text-decoration:none}
+.card .go:hover{text-decoration:underline}
+.empty{display:none;padding:30px;border:1.5px dashed var(--line);border-radius:14px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;counter-reset:s}
+.steps div{border-left:3px solid var(--teal);padding-left:18px}
+.steps div::before{counter-increment:s;content:counter(s);font:800 30px "Bricolage Grotesque",sans-serif;color:var(--teal)}
+.steps h3{font-size:21px;margin:2px 0 6px}
+.steps p{margin:0;color:var(--muted);font-size:16px}
+.band{background:var(--ink);color:var(--bg)}
+.band .sub{color:inherit;opacity:.8}
+.band .btn{border-color:var(--bg);color:var(--bg)}
+.band .btn.primary{background:var(--bg);color:var(--ink)}
+.minor{font-size:15px;color:var(--muted);margin:0}.minor a{color:var(--ink);text-underline-offset:3px;margin-left:4px}.minor a:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+footer{padding:26px 0;color:var(--muted);font-size:14px}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:24px}nav{display:none}.fgroup .lab{width:100%}}
+@media (prefers-reduced-motion:no-preference){.thumb i{transition:height .5s}.card:hover .thumb i{height:calc(var(--h) + 10px)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><b>Ann S. Abdelwahed</b><nav><a href="#work">Work</a><a href="#approach">Approach</a><a href="#training">Training</a><a href="#contact">Contact</a></nav></header>
+<div class="hero">
+<div>
+<h1>I turn data into decisions.</h1>
+<p class="lead">Data Analyst &amp; Tech Trainer with 13+ years of experience. I build dashboards that answer a business question, and I train teams to read them with confidence.</p>
+<div class="btns"><a class="btn primary" href="#work">See the work</a><a class="btn" href="https://linkedin.com/in/annsaid">LinkedIn profile</a></div>
+</div>
+<aside class="hero-card" aria-label="At a glance">
+<div class="big">13+</div><p>years working with data and learners</p>
+<div class="tools"><span>Excel</span><span>SQL</span><span>Tableau</span><span>Power BI</span></div>
+</aside>
+</div>
+</div>
+
+<section id="work"><div class="wrap">
+<h2>Selected work</h2>
+<p class="sub">Each piece starts with a business question and ends with a decision. Filter by type or by tool.</p>
+<div class="filters">
+<div class="fgroup" role="group" aria-label="Filter by type"><span class="lab">Type</span>
+<button class="chip" data-f="type" data-v="All" aria-pressed="true">All</button>
+<button class="chip" data-f="type" data-v="Project" aria-pressed="false">Projects</button>
+<button class="chip" data-f="type" data-v="Case study" aria-pressed="false">Case studies</button></div>
+<div class="fgroup" role="group" aria-label="Filter by tool"><span class="lab">Tool</span>
+<button class="chip" data-f="tool" data-v="All" aria-pressed="true">All</button>
+<button class="chip" data-f="tool" data-v="Tableau" aria-pressed="false">Tableau</button>
+<button class="chip" data-f="tool" data-v="Power BI" aria-pressed="false">Power BI</button>
+<button class="chip" data-f="tool" data-v="Excel" aria-pressed="false">Excel</button>
+<button class="chip" data-f="tool" data-v="SQL" aria-pressed="false">SQL</button></div>
+</div>
+<p class="count" id="count" aria-live="polite"></p>
+<div class="grid" id="grid">
+
+<article class="card" data-type="Case study" data-tool="Power BI">
+<div class="thumb" aria-hidden="true"><i style="--h:45%"></i><i style="--h:70%"></i><i style="--h:55%"></i><i style="--h:90%"></i><i style="--h:65%"></i></div>
+<div class="body"><div class="meta"><span class="t">Power BI</span><span class="k">Case study</span></div>
+<h3>Food delivery performance</h3>
+<dl><dt>Business question</dt><dd>Which restaurants, cuisines and order times drive delivery volume and customer ratings?</dd>
+<dt>What I built</dt><dd>An interactive Power BI Service dashboard on the Foodhub orders dataset.</dd></dl>
+<a class="go" href="#" aria-label="Open Food delivery performance">Open dashboard</a></div></article>
+
+<article class="card" data-type="Project" data-tool="Tableau">
+<div class="thumb" aria-hidden="true"><i style="--h:60%"></i><i style="--h:40%"></i><i style="--h:80%"></i><i style="--h:95%"></i><i style="--h:70%"></i></div>
+<div class="body"><div class="meta"><span class="t">Tableau</span><span class="k">Project</span></div>
+<h3>E-commerce sales overview</h3>
+<dl><dt>Business question</dt><dd>Which products, regions and months move revenue, and where is growth slowing?</dd>
+<dt>What I built</dt><dd>A Tableau dashboard with KPIs, trends and drill-down by category.</dd></dl>
+<a class="go" href="#" aria-label="Open E-commerce sales overview">Open on Tableau Public</a></div></article>
+
+<article class="card" data-type="Case study" data-tool="Tableau">
+<div class="thumb" aria-hidden="true"><i style="--h:50%"></i><i style="--h:65%"></i><i style="--h:48%"></i><i style="--h:82%"></i><i style="--h:75%"></i></div>
+<div class="body"><div class="meta"><span class="t">Tableau</span><span class="k">Case study</span></div>
+<h3>Financial performance review</h3>
+<dl><dt>Business question</dt><dd>How do revenue, cost and margin compare across periods, and what should leadership act on?</dd>
+<dt>What I built</dt><dd>A Tableau financial dashboard with period comparison and variance views.</dd></dl>
+<a class="go" href="#" aria-label="Open Financial performance review">Open on Tableau Public</a></div></article>
+
+<article class="card" data-type="Project" data-tool="Tableau">
+<div class="thumb" aria-hidden="true"><i style="--h:72%"></i><i style="--h:58%"></i><i style="--h:44%"></i><i style="--h:66%"></i><i style="--h:52%"></i></div>
+<div class="body"><div class="meta"><span class="t">Tableau</span><span class="k">Project</span></div>
+<h3>HR workforce dashboard</h3>
+<dl><dt>Business question</dt><dd>What does headcount, attrition and team structure look like, and where are the risks?</dd>
+<dt>What I built</dt><dd>A Tableau HR dashboard covering headcount, turnover and department breakdowns.</dd></dl>
+<a class="go" href="#" aria-label="Open HR workforce dashboard">Open on Tableau Public</a></div></article>
+
+<article class="card" data-type="Project" data-tool="Excel">
+<div class="thumb" aria-hidden="true"><i style="--h:35%"></i><i style="--h:55%"></i><i style="--h:75%"></i><i style="--h:60%"></i><i style="--h:85%"></i></div>
+<div class="body"><div class="meta"><span class="t">Excel</span><span class="k">Project</span></div>
+<h3>Sales report with pivots</h3>
+<dl><dt>Business question</dt><dd>Can a messy sales file become a clean monthly report anyone can refresh?</dd>
+<dt>What I built</dt><dd>Cleaned data, pivot tables, formulas and a summary sheet. Replace with your own Excel project.</dd></dl>
+<a class="go" href="#" aria-label="Open Sales report with pivots">View on GitHub</a></div></article>
+
+<article class="card" data-type="Case study" data-tool="SQL">
+<div class="thumb" aria-hidden="true"><i style="--h:80%"></i><i style="--h:62%"></i><i style="--h:50%"></i><i style="--h:42%"></i><i style="--h:30%"></i></div>
+<div class="body"><div class="meta"><span class="t">SQL</span><span class="k">Case study</span></div>
+<h3>Customer retention queries</h3>
+<dl><dt>Business question</dt><dd>Which customers come back, and which ones are about to leave?</dd>
+<dt>What I built</dt><dd>A set of SQL queries with joins and window functions. Replace with your own SQL case.</dd></dl>
+<a class="go" href="#" aria-label="Open Customer retention queries">View on GitHub</a></div></article>
+
+</div>
+<p class="empty" id="empty">No work matches this combination yet. Try another tool or type.</p>
+</div></section>
+
+<section id="approach"><div class="wrap">
+<h2>How I work</h2>
+<p class="sub">Every analysis follows the same path, so the result is something a manager can act on.</p>
+<div class="steps">
+<div><h3>Ask</h3><p>I start with the decision someone has to make, not with the data.</p></div>
+<div><h3>Analyse</h3><p>I clean, model and test the data until the answer is reliable.</p></div>
+<div><h3>Decide</h3><p>I present one clear recommendation, with the visuals that support it.</p></div>
+</div></div></section>
+
+<section id="training"><div class="wrap">
+<h2>Training is part of the job</h2>
+<p class="sub">I have delivered full data analysis courses of 60 and 80 hours, covering Excel, SQL, Tableau and Power BI. Explaining a method clearly makes me a better analyst, and it means I can bring a whole team along.</p>
+<p class="minor">More of my training: <a href="#">Courses on Udemy</a> and <a href="#">Videos on YouTube</a></p>
+</div></section>
+
+<section id="contact" class="band"><div class="wrap">
+<h2>Let’s talk about your data</h2>
+<p class="sub">The quickest way to reach me is on LinkedIn.</p>
+<div class="btns"><a class="btn primary" href="https://linkedin.com/in/annsaid">Message me on LinkedIn</a><a class="btn" href="#">GitHub</a></div>
+</div></section>
+<div class="wrap"><footer>© Ann S. Abdelwahed. Dashboards use public or sample datasets.</footer></div>
+
+<script>
+(function(){
+var s={type:"All",tool:"All"};
+var cards=[].slice.call(document.querySelectorAll(".card"));
+var chips=[].slice.call(document.querySelectorAll(".chip"));
+function apply(){
+var n=0;
+cards.forEach(function(c){
+var ok=(s.type==="All"||c.dataset.type===s.type)&&(s.tool==="All"||c.dataset.tool===s.tool);
+c.style.display=ok?"":"none";if(ok)n++;
+});
+document.getElementById("count").textContent=n+(n===1?" piece of work":" pieces of work");
+document.getElementById("empty").style.display=n?"none":"block";
+}
+chips.forEach(function(b){
+b.addEventListener("click",function(){
+s[b.dataset.f]=b.dataset.v;
+chips.forEach(function(x){if(x.dataset.f===b.dataset.f)x.setAttribute("aria-pressed",x===b?"true":"false")});
+apply();
+});
+});
+[].slice.call(document.querySelectorAll(".go")).forEach(function(a){if(a.getAttribute("href")==="#")a.style.display="none"});
+apply();
+})();
+</script>
+</body>
+</html>
